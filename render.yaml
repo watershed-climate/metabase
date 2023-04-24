@@ -1,6 +1,6 @@
 services:
-  - type: web
-    name: metabase
+  - type: pserv
+    name: metabase-external
     env: docker
     repo: https://github.com/watershed-climate/metabase.git # optional
     plan: standard # ensure that metabase has at least 2GB of RAM (defaults to starter)
@@ -8,9 +8,9 @@ services:
     envVars:
       - key: MB_DB_CONNECTION_URI
         fromDatabase:
-          name: elephant
+          name: metabase-external
           property: connectionString
 databases:
-  - name: elephant
+  - name: metabase-external
     databaseName: metabasedb
     ipAllowList: [] # only allow internal connections
