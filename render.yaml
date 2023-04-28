@@ -10,7 +10,21 @@ services:
         fromDatabase:
           name: metabase-external
           property: connectionString
+  - type: pserv
+    name: metabase-test
+    env: docker
+    repo: https://github.com/watershed-climate/metabase.git # optional
+    plan: standard # ensure that metabase has at least 2GB of RAM (defaults to starter)
+    autoDeploy: false
+    envVars:
+      - key: MB_DB_CONNECTION_URI
+        fromDatabase:
+          name: metabase-test
+          property: connectionString
 databases:
   - name: metabase-external
+    databaseName: metabasedb
+    ipAllowList: [] # only allow internal connections
+  - name: metabase-test
     databaseName: metabasedb
     ipAllowList: [] # only allow internal connections
