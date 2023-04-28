@@ -1,5 +1,5 @@
 services:
-  - type: pserv
+  - type: web
     name: metabase-external
     env: docker
     repo: https://github.com/watershed-climate/metabase.git # optional
