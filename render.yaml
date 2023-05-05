@@ -22,7 +22,7 @@ services:
           name: metabase-test
           property: connectionString
 databases:
-  - name: metabase-external
+  - name: wetabase-external
     databaseName: metabasedb
     ipAllowList: [] # only allow internal connections
   - name: metabase-test
