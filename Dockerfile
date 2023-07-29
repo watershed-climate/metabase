@@ -1,1 +1,1 @@
-FROM metabase/metabase-enterprise:v1.46.6.1-latest-patch
+FROM metabase/metabase-enterprise:v1.46.6.4
